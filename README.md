@@ -71,15 +71,16 @@ Run the following command:
 Copy code
 flutter run
 ```
-# Dependencies
+## Known Issues
 
-**http**: For making HTTP requests to the OpenWeatherMap API.
+If the UI overflows, ensure your device's font scaling settings or display size adjustments are within normal ranges.
 
-**geolocator**: To get the user's location for weather updates.
-
-**provider**: To manage and share app state across different screens.
-
-**flutter_svg**: For displaying weather icons in SVG format.
+Double-check the API key if the weather data does not load.
+## Development Highlights
+-**State Management**: The app uses the setState method for managing UI state updates.
+-**Error Handling**: Added robust error handling to manage API errors and invalid city inputs.
+-**Optimized UI**: Improved designs for weather details and forecast views.
+-**No Debug Banner**: Removed the debug banner for a polished user interface.
 
 # API Integration
 
@@ -89,68 +90,24 @@ Current Weather (GET request)
 
 Endpoint: https://api.openweathermap.org/data/2.5/weather
 
-Query Parameters:
-
-q (city name)
-
-lat and lon (latitude and longitude, for geolocation)
-
-units (metric or imperial for Celsius/Fahrenheit)
-
-7-Day Forecast (GET request)
-
-Endpoint: https://api.openweathermap.org/data/2.5/onecall
-
-Query Parameters:
-
-lat and lon (latitude and longitude)
-
-exclude (current, minutely, hourly, daily - depending on what is needed)
-
-Hourly Forecast (GET request)
-
-Endpoint: https://api.openweathermap.org/data/2.5/forecast
-
-Query Parameters:
-
-q (city name)
-
-units (metric or imperial)
-
-Challenges & Solutions
-
-Geolocation Permissions:
-
-Challenge: Handling location permissions on both iOS and Android.
-
-Solution: Used the geolocator package and handled permission requests for both platforms properly.
-
-API Rate Limits:
-
-Challenge: OpenWeatherMap's free tier has limited API calls.
-
-Solution: Implemented a caching system to store weather data locally and reduce the number of API requests.
-
-Responsive UI Design:
-
-Challenge: Ensuring the UI adapts well to different screen sizes.
-
-Solution: Used Flutter's MediaQuery and layout widgets like Expanded and Flexible to ensure responsiveness.
 
 # Contributing
 
-Feel free to fork this repository and submit pull requests. If you encounter any issues, open an issue in the GitHub repository.
+Contributions are welcome! If you'd like to contribute to this project:
 
-# License
+Fork the repository.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Create a feature branch: git checkout -b feature-name.
+
+Commit your changes: git commit -m 'Add some feature'.
+
+Push to the branch: git push origin feature-name.
+
+Submit a pull request.
 
 # Acknowledgments
+**API**: OpenWeatherMap
 
-OpenWeatherMap API for providing the weather data.
+**Icons**: Font Awesome Flutter
 
-Flutter Team for creating a great cross-platform development framework.
-
-Geolocator Package for easy location fetching.
-
-Provider Package for effective state management in Flutter.
+**Framework**: Flutter
